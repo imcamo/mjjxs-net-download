@@ -1,0 +1,16 @@
+{
+  "name": "mjjxs-net-download",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zengzhaogen",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "epub-gen": "^0.1.0",
+    "finder-sort": "^0.3.3"
+  }
+}
