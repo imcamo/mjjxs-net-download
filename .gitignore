@@ -1,2 +1,3 @@
 node_modules
-/build/chapter
+/build/chapter/*
+/build/books/*
