@@ -1,6 +1,9 @@
 const spider = require('./spider');
 
-process.on('message', ([workIdx, cpus]) => {
-  spider(workIdx, cpus)
-});
+(async () => {
+  process.on('message', ([workIdx, cpus, chaperListData]) => {
+    spider.getChaperData(workIdx, cpus, chaperListData)
+  });
+})();
+
 
