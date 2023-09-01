@@ -47,7 +47,7 @@ inquirer.prompt([
 ]).then((data) => {
   process.env.DOWNLOAD_URL = data.DOWNLOAD_URL;
   process.env.COVER_URL = data.COVER_URL;
-  process.env.ENABLE_PROTY = data.ENABLE_PROTY ? 1 : 0;
+  process.env.ENABLE_PROTY = data.ENABLE_PROTY;
 
   if (data.ENABLE_PROTY) {
     const [HOST, PORT] = data.PROXY.split(':');
