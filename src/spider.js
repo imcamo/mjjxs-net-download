@@ -10,22 +10,22 @@ const { HttpsProxyAgent } = require("https-proxy-agent");
 //
 
 // 小说下载 URL
-const DOWNLOAD_URL = 'https://mjjxs.net/v3_uni_0705?1#/v3/18844836/2402584/';
+const DOWNLOAD_URL = process.env.DOWNLOAD_URL;
 // 书籍封面 URL
-const BOOK_COVER = '';
+const BOOK_COVER = process.env.COVER_URL;
 // 休眠设置
-const SLEEP_MIN = 200
-const SLEEP_MAX = 210;
+const SLEEP_MIN = 100
+const SLEEP_MAX = 200;
 
 // 代理配置区域（隧道代理）
 // 是否开启
-const ENABLE_PROXY = false;
+const ENABLE_PROXY = process.env.ENABLE_PROTY === 'true';
 // 代理主机名
-const PROXY_HOST = ''
+const PROXY_HOST = process.env.PROXY_HOST;
 // 代理端口
-const PROXY_PORT = '';
+const PROXY_PORT = process.env.PROXY_PORT;
 // 隧道认证 TOKEN
-const PROXY_AUTH = { KEY: '', PWD: '' };
+const PROXY_AUTH = { KEY: process.env.AUTH_KEY, PWD: process.env.AUTH_PWD };
 
 if (ENABLE_PROXY) {
   axios.default.httpAgent = new HttpsProxyAgent(`http://${PROXY_AUTH.KEY}:${PROXY_AUTH.PWD}@${PROXY_HOST}:${PROXY_PORT}`);
@@ -320,6 +320,6 @@ module.exports = {
       logger.info(`[进程结束${workIdx}]：无法分配任务`);
     }
 
-    process.exit();
+    process.exit(0);
   }
 }
