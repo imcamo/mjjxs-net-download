@@ -1,4 +1,4 @@
 node_modules
-build/chapter/*
-build/books/*
 logs/*
+data/*
+output/*

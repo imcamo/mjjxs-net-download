@@ -2,6 +2,7 @@ const cluster = require('cluster');
 const cpus = require('os').cpus().length;
 const path = require('path');
 const spider = require('./spider');
+const epub = require('./epub');
 
 (async () => {
   // master 进程先获取章节信息
@@ -18,4 +19,12 @@ const spider = require('./spider');
     // worker 进程并发下载
     worker.send([i, cpus, chaperListData]);
   }
+
+  cluster.on('exit', () => {
+    // 全部进程关闭后认为下载完成立即打包
+    if (!Object.keys(cluster.workers).length) {
+      console.log('进程都关闭了');
+      epub(process.env.SAVE_BASE_PATH)
+    }
+  });
 })();
