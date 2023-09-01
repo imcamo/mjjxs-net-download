@@ -7,17 +7,8 @@ npm i
 ```
 # 开始下载
 ```bash
-node ./src/index.js
+node ./command/index.js
 ```
-
-# 变量配置
-- DOWNLOAD_URL 小说下载 URL
-- BOOK_COVER 小说封面图片 URL
-- ENABLE_PROXY 是否开启代理，默认为 `false`
-- PROXY_HOST 代理主机
-- PROXY_PORT 代理端口
-- PROXY_AUTH 代理认证信息
-
 
 # 文件目录介绍
 - data 书籍下载信息

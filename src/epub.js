@@ -16,7 +16,7 @@ module.exports = function(bookPath) {
 
     const option = {
         title: bookData.title,
-        auther: bookData.auther,
+        auther: bookData.author,
         publisher: bookData.publisher,
         cover: bookData.cover,
         content: sortData.map(id => {

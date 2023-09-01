@@ -12,7 +12,8 @@
     "axios": "^1.5.0",
     "bunyan": "^1.8.15",
     "epub-gen": "^0.1.0",
-    "finder-sort": "^0.3.3",
-    "https-proxy-agent": "^7.0.1"
+    "https-proxy-agent": "^7.0.1",
+    "inquirer": "^8.2.6",
+    "ora": "^5.4.1"
   }
 }

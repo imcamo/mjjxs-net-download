@@ -3,6 +3,7 @@ const cpus = require('os').cpus().length;
 const path = require('path');
 const spider = require('./spider');
 const epub = require('./epub');
+const logger = require('./logger');
 
 (async () => {
   // master 进程先获取章节信息
@@ -23,7 +24,7 @@ const epub = require('./epub');
   cluster.on('exit', () => {
     // 全部进程关闭后认为下载完成立即打包
     if (!Object.keys(cluster.workers).length) {
-      console.log('进程都关闭了');
+      logger.info('[打包书籍]');
       epub(process.env.SAVE_BASE_PATH)
     }
   });
